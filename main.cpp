@@ -93,6 +93,7 @@ int main(int nArgs, LPSTR *rgszArgs) {
                 } else {
                     nResult = Panic("IShellFolder::ParseDisplayName", hr);
                 }
+                CoTaskMemFree(pOleStr);
             } else {
                 nResult = Panic("ToOleStr", hr);
             }
