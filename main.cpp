@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <wchar.h>
 
 int Panic(LPCSTR lpszAction, HRESULT hr) {
     fprintf(stderr, "%s error: 0x%08X\n", lpszAction, hr);
@@ -55,7 +56,7 @@ int main(int nArgs, LPSTR *rgszArgs) {
                         IEnumIDList *peidlDir;
                         hr = psfDir->EnumObjects(NULL, SHCONTF_FOLDERS | SHCONTF_NONFOLDERS, &peidlDir);
                         if (SUCCEEDED(hr)) {
-                            printf("=== Contents of %s: ===\n", szDir);
+                            wprintf(L"=== Contents of %s: ===\n", szDir);
 
                             LPITEMIDLIST pidlObject;
                             BOOL fList = FALSE;
