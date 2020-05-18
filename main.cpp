@@ -76,7 +76,7 @@ int main(int nArgs, LPSTR *rgszArgs) {
                                 } else {
                                     Panic("IShellFolder::GetDisplayNameOf", hr);
                                 }
-                                CoTaskMemFree(&pidlObject);
+                                CoTaskMemFree(pidlObject);
                             }
                             if (FAILED(hr) && !fList) {
                                 nResult = Panic("IEnumIDList::Next", hr);
